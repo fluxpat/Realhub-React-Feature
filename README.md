@@ -21,7 +21,7 @@ Using React.js and ES6 build the ArtworkComments component. Please review the sc
 
 ## Colours
 
-Blue - #02b7e2
-Dark Grey - #404041
-Light Grey - #8c8c8e
-Line Colour - #d8d9d9
+* Blue - #02b7e2
+* Dark Grey - #404041
+* Light Grey - #8c8c8e
+* Line Colour - #d8d9d9
