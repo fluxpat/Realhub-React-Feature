@@ -8,6 +8,8 @@ Using React.js and ES6 build the ArtworkComments component. Please review the sc
 
 * Component is built using React.js
 * Component uses ES6 syntax and features
+* Component is built as a Functional Component
+* Uses React Hooks
 * Comments are ordered in reverse chronological order (newest comments first).
 * Ability to mark comments as "seen" / acknowledged
 * If there are unseen comments the button is blue
