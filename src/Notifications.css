@@ -1,0 +1,32 @@
+.comments-block {
+    width: 450px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+h3 {
+    margin: 0 5px;
+    font-size: 1em;
+    font-weight: 500;
+    color: #02b7e2;
+  }
+
+.comment {
+    border-bottom: 1px dotted #d8d9d9;
+    display: flex;
+}
+
+.user-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+}
+
+.comment-content {
+}
+
+.comment-body {
+    word-wrap: normal;
+}
