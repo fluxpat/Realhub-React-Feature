@@ -2,8 +2,8 @@ import React from "react";
 import data from "./comment_data.json"
 import "./Notifications.css"
 
+// Initialisation and population of "comments" array to present JSON data in REVERSE order (newest comments to oldest)
 let comments = [];
-
 for (let i = data.length - 1; i >= 0; i--) {
     comments.push(
         <div className="comment">
