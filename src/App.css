@@ -102,3 +102,11 @@ svg {
   position: absolute;
   top: 154px;
 }
+
+.comments-block {
+  width: 475px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}

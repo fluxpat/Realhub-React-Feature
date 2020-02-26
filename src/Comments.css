@@ -1,10 +1,4 @@
-.comments-block {
-    width: 475px;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    overflow: auto;
-}
+/*  */
 
 p {
     margin: 0 5px;
@@ -61,6 +55,8 @@ a {
 .comment-info {
     display: flex;
     flex-direction: row;
+    height: 1em;
+    align-items: center;
 }
 
 .comment-seen {

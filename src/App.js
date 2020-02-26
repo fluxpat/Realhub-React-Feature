@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import data from "./comment_data.json"
 import "./App.css";
-import Notifications from "./Notifications"
+import Comments from "./Comments"
 
 
 function App() {
@@ -61,7 +62,11 @@ function App() {
           </svg>
         </button>
         <div className="notifications">
-          {bellClick && <Notifications />}
+          {bellClick && <div className="comments-block">
+            {data.map((data) =>
+              <Comments key={data.id} {...data} />
+            )}
+          </div>}
         </div>
       </div>
 
@@ -71,7 +76,6 @@ function App() {
           Realhub React App
           </p>
       </div>
-
     </div>
   );
 }
