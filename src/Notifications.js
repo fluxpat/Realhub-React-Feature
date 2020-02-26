@@ -1,29 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import data from "./comment_data.json"
 import "./Notifications.css"
 
-// Initialisation and population of "comments" array to present JSON data in REVERSE order (newest comments to oldest)
-let comments = [];
-for (let i = data.length - 1; i >= 0; i--) {
-    comments.push(
-        <div className="comment">
-            <img className="user-pic" src={data[i].user.image.original_url} alt="" />
-            <div className="comment-content">
-                <h3 className="comment-user">
-                    {data[i].user.first_name} {data[i].user.last_name}
-                </h3>
-                <p className="comment-body">
-                    {data[i].body}
-                </p>
-            </div>
-        </div>
-    )
-}
-
 function Notifications() {
+
+    const [acknowledged, setAcknowledged] = useState(data)
+
+    const clickHandler = (id) => {
+        (data.find(comment => comment.id === id)).acknowledged = true;
+        console.log(data.find(comment => comment.id === id))
+    }
+
     return (
         <div className="comments-block">
-            {comments}
+            {/* {comments} */}
+            {data.map((data) =>
+                /* Could have instead separated 'map()' function from the 'comment' component for simplicity, but didn't here as the feature is not very complex/nested */
+                <div className="comment" key={data.id}>
+                    <img className="user-pic" src={data.user.image.original_url} alt="" />
+                    <div className="comment-content">
+                        <h3 className="comment-user">
+                            {data.user.first_name} {data.user.last_name}
+                        </h3>
+                        <p className="comment-body">
+                            {data.body}
+                        </p>
+                        <div className="comment-info">
+                            <h4>
+                                {data.dates.created.date_time}
+                            </h4>
+                            {(acknowledged.find(comment => comment.id === data.id)).acknowledged ? <a></a>
+                             : <a href="#" className="comment-seen" onClick={() => setAcknowledged({...acknowledged, })}>Mark as Seen</a>}
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     )
 }
