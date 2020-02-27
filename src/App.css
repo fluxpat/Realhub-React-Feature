@@ -1,6 +1,6 @@
 * {
   font-family: 'Raleway';
-  color: #404041;
+  /* color: #404041; */
 }
 
 .App {
@@ -15,10 +15,13 @@ button {
   border: none;
 }
 
+button:focus { outline:0 !important; }
+
 h2 {
   margin: 0 5px;
   font-size: 1.2em;
   font-weight: 500;
+  color: #404041;
 }
 
 h4 {
@@ -50,6 +53,7 @@ svg {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  color: #404041;
 }
 
 .back {
@@ -91,6 +95,16 @@ svg {
   color: white;
 }
 
+.bell-default {
+  background-color: white;
+  color: rgb(3, 183, 226);
+}
+
+.bell-default:hover {
+  background-color: rgb(3, 183, 226);
+  color: white;
+}
+
 /* Removing the down arrow from drop-down menu */
 .dropdown-toggle::after {
   content: none;
@@ -107,6 +121,14 @@ svg {
   width: 475px;
   padding: 10px;
   display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.comments-block-hidden {
+  width: 475px;
+  padding: 10px;
+  display: none;
   flex-direction: column;
   overflow: auto;
 }

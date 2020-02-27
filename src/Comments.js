@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import data from "./comment_data.json"
 import "./Comments.css"
 
 function Comments(props) {
@@ -12,6 +11,12 @@ function Comments(props) {
     //     (data.find(comment => comment.id === id)).acknowledged = true;
     //     console.log(data.find(comment => comment.id === id))
     // }
+
+    const clickHandler = () => {
+        props.updateCommentData(props.id);
+        props.refreshBell();
+        setAcknowledged(true);
+    }
 
     return (
         <div className="comment" key={props.id}>
@@ -27,8 +32,12 @@ function Comments(props) {
                     <h4>
                         {props.dates.created.date_time}
                     </h4>
+                    {/* {acknowledged ? <a></a> : <a href="#" className="comment-seen"
+                        onClick={() => setAcknowledged(true)}>Mark as Seen</a>} */}
+                    {/* {acknowledged ? <a></a> : <a href="#" className="comment-seen"
+                        onClick={() => props.updateCommentData(props.id), ()=>setAcknowledged(true)}>Mark as Seen</a>} */}
                     {acknowledged ? <a></a> : <a href="#" className="comment-seen"
-                        onClick={() => setAcknowledged(true)}>Mark as Seen</a>}
+                        onClick={() => clickHandler()}>Mark as Seen</a>}
                 </div>
             </div>
         </div>
