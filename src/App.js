@@ -8,6 +8,16 @@ function App() {
 
   const [bellClick, setBellClick] = useState(false);
   const [commentData, setCommentData] = useState(data);
+  const [anyUnseen, setAnyUnseen] = useState(true);
+
+  const checkUnseen = () => {
+    let unseenComment = commentData.findIndex(obj => obj.acknowledged === false);
+    if (unseenComment < 0) {
+      setAnyUnseen(false)
+    } else {
+      setAnyUnseen(true)
+    }
+  }
 
   // Handler function that updates the commentData state
   const updateCommentData = (id) => {
@@ -15,6 +25,7 @@ function App() {
     let commentIndex = commentData.findIndex(obj => obj.id === id);
     commentData[commentIndex].acknowledged = true;
     setCommentData(commentData);
+    checkUnseen();
     console.log("Newly updated commentData: ", commentData)
   }
 
@@ -23,8 +34,6 @@ function App() {
     let newBellClick = bellClick;
     setBellClick(newBellClick);
   }
-
-  let unseenComment = commentData.findIndex(obj => obj.acknowledged === false)
 
   return (
     <div className="App">
@@ -74,7 +83,7 @@ function App() {
           </button>
         </div>
         {/* The notifications "drop-down" bubble */}
-        <button className={unseenComment < 0 ? "button bell-default" : "button bell"} onClick={() => setBellClick(!bellClick)}>
+        <button className={anyUnseen ? "button bell" : "button bell-default"} onClick={() => setBellClick(!bellClick)}>
           <svg className="bi bi-bell-fill" width="1.4em" height="1.4em" viewBox="0 0 20 20" fill="currentColor">
             <path d="M10 18a2 2 0 002-2H8a2 2 0 002 2zm.995-14.901a1 1 0 10-1.99 0A5.002 5.002 0 005 8c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z"></path>
           </svg>
