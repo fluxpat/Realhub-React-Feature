@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f172938d99b1ae7b19ab2c88f50c51e8",
+    "revision": "cb198d01e1bcbd9f77b2445db81f4b54",
     "url": "/Realhub-React-Feature/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Realhub-React-Feature/static/css/2.67123b20.chunk.css"
   },
   {
-    "revision": "13c6b0fa48fe86072175",
-    "url": "/Realhub-React-Feature/static/css/main.b5adcc44.chunk.css"
+    "revision": "ea9a6b293a5f5af78149",
+    "url": "/Realhub-React-Feature/static/css/main.4388fb04.chunk.css"
   },
   {
     "revision": "fa53130631f72cdaf23c",
@@ -20,7 +20,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Realhub-React-Feature/static/js/2.270dcc06.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "13c6b0fa48fe86072175",
+    "revision": "ea9a6b293a5f5af78149",
     "url": "/Realhub-React-Feature/static/js/main.8b340671.chunk.js"
   },
   {
