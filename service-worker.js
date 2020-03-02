@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Realhub-React-Feature/precache-manifest.aa735d1519e8a28fa17bbf4d95ca71d8.js"
+  "/Realhub-React-Feature/precache-manifest.9c418898133fce755e09bc96e5deec71.js"
 );
 
 self.addEventListener('message', (event) => {

@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Realhub-React-Feature/static/css/main.4388fb04.chunk.css",
+    "main.css": "/Realhub-React-Feature/static/css/main.b5adcc44.chunk.css",
     "main.js": "/Realhub-React-Feature/static/js/main.8b340671.chunk.js",
     "main.js.map": "/Realhub-React-Feature/static/js/main.8b340671.chunk.js.map",
     "runtime-main.js": "/Realhub-React-Feature/static/js/runtime-main.80715c87.js",
@@ -9,17 +9,17 @@
     "static/js/2.270dcc06.chunk.js": "/Realhub-React-Feature/static/js/2.270dcc06.chunk.js",
     "static/js/2.270dcc06.chunk.js.map": "/Realhub-React-Feature/static/js/2.270dcc06.chunk.js.map",
     "index.html": "/Realhub-React-Feature/index.html",
-    "precache-manifest.aa735d1519e8a28fa17bbf4d95ca71d8.js": "/Realhub-React-Feature/precache-manifest.aa735d1519e8a28fa17bbf4d95ca71d8.js",
+    "precache-manifest.9c418898133fce755e09bc96e5deec71.js": "/Realhub-React-Feature/precache-manifest.9c418898133fce755e09bc96e5deec71.js",
     "service-worker.js": "/Realhub-React-Feature/service-worker.js",
     "static/css/2.67123b20.chunk.css.map": "/Realhub-React-Feature/static/css/2.67123b20.chunk.css.map",
-    "static/css/main.4388fb04.chunk.css.map": "/Realhub-React-Feature/static/css/main.4388fb04.chunk.css.map",
+    "static/css/main.b5adcc44.chunk.css.map": "/Realhub-React-Feature/static/css/main.b5adcc44.chunk.css.map",
     "static/js/2.270dcc06.chunk.js.LICENSE.txt": "/Realhub-React-Feature/static/js/2.270dcc06.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.80715c87.js",
     "static/css/2.67123b20.chunk.css",
     "static/js/2.270dcc06.chunk.js",
-    "static/css/main.4388fb04.chunk.css",
+    "static/css/main.b5adcc44.chunk.css",
     "static/js/main.8b340671.chunk.js"
   ]
 }
