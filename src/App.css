@@ -3,7 +3,8 @@
 }
 
 :root {
-  --blue: rgb(2, 183, 226);
+  --blue: red;
+  /* --blue: rgb(2, 183, 226); */
   --blue-hover: rgba(2, 183, 226, 0.8);
   --dark-grey: #404041;
   --light-grey: #8c8c8e;
