@@ -10,6 +10,7 @@ function App() {
   const [commentData, setCommentData] = useState(data);
   const [anyUnseen, setAnyUnseen] = useState(true);
 
+  // Check to see if any comments are yet to be 'seen' to conditionally style the bell icon
   const checkUnseen = () => {
     let unseenComment = commentData.findIndex(obj => obj.acknowledged === false);
     if (unseenComment < 0) {
@@ -29,12 +30,6 @@ function App() {
     console.log("Newly updated commentData: ", commentData)
   }
 
-  // Refresh the Bell icon
-  const refreshBell = () => {
-    let newBellClick = bellClick;
-    setBellClick(newBellClick);
-  }
-
   return (
     <div className="App">
 
@@ -46,7 +41,7 @@ function App() {
 
       {/* Toolbar row with "notification bell" */}
       <div className="toolbar">
-        <button className="button">
+        <button className="tool-button">
           <svg className="bi bi-download" width="1.4em" height="1.4em" viewBox="0 0 20 20" fill="currentColor">
             <path fillRule="evenodd" d="M2.5 10a.5.5 0 01.5.5V14a1 1 0 001 1h12a1 1 0 001-1v-3.5a.5.5 0 011 0V14a2 2 0 01-2 2H4a2 2 0 01-2-2v-3.5a.5.5 0 01.5-.5z" clipRule="evenodd"></path>
             <path fillRule="evenodd" d="M7 9.5a.5.5 0 01.707 0L10 11.793 12.293 9.5a.5.5 0 01.707.707l-2.646 2.647a.5.5 0 01-.708 0L7 10.207A.5.5 0 017 9.5z" clipRule="evenodd"></path>
@@ -56,7 +51,7 @@ function App() {
             Download File
           </h2>
         </button>
-        <button className="button">
+        <button className="tool-button">
           <svg className="bi bi-envelope-fill" width="1.4em" height="1.4em" viewBox="0 0 20 20" fill="currentColor">
             <path d="M2.05 5.555L10 10.414l7.95-4.859A2 2 0 0016 4H4a2 2 0 00-1.95 1.555zM18 6.697l-5.875 3.59L18 13.743V6.697zm-.168 8.108l-6.675-3.926-1.157.707-1.157-.707-6.675 3.926A2 2 0 004 16h12a2 2 0 001.832-1.195zM2 13.743l5.875-3.456L2 6.697v7.046z"></path>
           </svg>
@@ -82,20 +77,23 @@ function App() {
             </svg>
           </button>
         </div>
+
         {/* The notifications "drop-down" bubble */}
         <button className={anyUnseen ? "button bell" : "button bell-default"} onClick={() => setBellClick(!bellClick)}>
           <svg className="bi bi-bell-fill" width="1.4em" height="1.4em" viewBox="0 0 20 20" fill="currentColor">
             <path d="M10 18a2 2 0 002-2H8a2 2 0 002 2zm.995-14.901a1 1 0 10-1.99 0A5.002 5.002 0 005 8c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z"></path>
           </svg>
         </button>
-        <div className="notifications">
-          {/* Simple way of conditionally rendering the comments-block without affecting state of children */}
           <div className={bellClick ? "comments-block" : "comments-block-hidden"}>
             {commentData.map((data) =>
-              <Comments key={data.id} {...data} updateCommentData={updateCommentData} refreshBell={refreshBell} />
+              <Comments key={data.id} {...data} updateCommentData={updateCommentData} />
             )}
+            <button className="button approved">
+              <p className="mark-approved">
+              Mark as Approved
+              </p>
+          </button>
           </div>
-        </div>
       </div>
 
       {/* Where the body-content of the app would be */}

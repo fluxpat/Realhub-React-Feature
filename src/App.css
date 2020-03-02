@@ -1,11 +1,19 @@
 * {
   font-family: 'Raleway';
-  /* color: #404041; */
+}
+
+:root {
+  --blue: rgb(2, 183, 226);
+  --blue-hover: rgba(2, 183, 226, 0.8);
+  --dark-grey: #404041;
+  --light-grey: #8c8c8e;
+  --line-color: #d8d9d9;
+  --green: rgb(69, 171, 107);
+  --green-hover: rgba(69, 171, 107, 0.8);
 }
 
 .App {
     margin: auto;
-    /* font-family: Arial, Helvetica, sans-serif; */
     width: 50%;
   }
 
@@ -14,21 +22,21 @@ button {
   background: none;
   border: none;
 }
-
+/* Technically shouldn't remove the button outline as it assists screen readers */
 button:focus { outline:0 !important; }
 
 h2 {
   margin: 0 5px;
   font-size: 1.2em;
   font-weight: 500;
-  color: #404041;
+  color: var(--dark-grey);
 }
 
 h4 {
   margin: 0 5px;
   font-size: 1em;
   font-weight: 500;
-  color: #8c8c8e;
+  color: var(--light-grey);
 }
 
 svg {
@@ -43,9 +51,8 @@ svg {
   align-items: center;
 }
 
-.button {
-  border: 1px solid #d8d9d9;
-  background: none;
+.tool-button {
+  border: 1px solid var(--line-color);
   height: 50px;
   margin: 8px 4px;
   padding: 0 15px;
@@ -53,25 +60,43 @@ svg {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: #404041;
+  color: var(--dark-grey);
+}
+
+.button {
+  border: 1px solid var(--line-color);
+  height: 50px;
+  margin: 8px 4px;
+  padding: 0 15px;
+  border-radius: 10px;
+  display: block;
+  align-items: center;
+  justify-content: center;
 }
 
 .back {
-  background-color: rgb(69, 171, 107);
+  background-color: var(--green);
   color: white;
-  margin-left: 30px;
+  transition: all 0.3s;
+}
+.back:hover {
+  background-color: var(--green-hover);
+  transition: all 0.3s;
+}
+.back:active {
+  transform: translateY(2px);
 }
 
 .toolbar {
   height: 65px;
-  border: 1px solid #d8d9d9;
+  border: 1px solid var(--line-color);
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
 
 .zoom-buttons {
-  border: 1px solid #d8d9d9;
+  border: 1px solid var(--line-color);
   background: none;
   height: 50px;
   margin: 8px 4px;
@@ -85,24 +110,34 @@ svg {
   width: 100px;
   text-align: center;
   padding: 10px;
-  border-left: 1px solid #d8d9d9;
-  border-right: 1px solid #d8d9d9;
+  border-left: 1px solid var(--line-color);
+  border-right: 1px solid var(--line-color);
   height: 100%;
 }
 
 .bell {
-  background-color: rgb(3, 183, 226);
+  background-color: var(--blue);
   color: white;
+  transition: all 0.3s
+}
+.bell:hover {
+  background-color: var(--blue-hover);
+}
+.bell:active {
+  transform: translateY(2px);
 }
 
 .bell-default {
   background-color: white;
-  color: rgb(3, 183, 226);
+  color: var(--blue);
+  transition: all 0.3s
 }
-
 .bell-default:hover {
-  background-color: rgb(3, 183, 226);
+  background-color: var(--blue);
   color: white;
+}
+.bell-default:active {
+  transform: translateY(2px);
 }
 
 /* Removing the down arrow from drop-down menu */
@@ -110,25 +145,41 @@ svg {
   content: none;
 }
 
-.notifications {
-  border: 1px solid #d8d9d9;
+.comments-block {
+  border: 1px solid var(--line-color);
   border-radius: 10px;
   position: absolute;
   top: 154px;
-}
 
-.comments-block {
   width: 475px;
+  height: 350px;
   padding: 10px;
   display: flex;
   flex-direction: column;
   overflow: auto;
+  transition: all 1s
+}
+.comments-block-hidden {
+  display: none;
+  transition: all 1s
 }
 
-.comments-block-hidden {
-  width: 475px;
+.approved {
+  background-color: var(--green);
+  color: white;
+  transition: all 0.2s;
+  margin: 20px 0 5px 0;
+}
+.approved:hover {
+  background-color: var(--green-hover);
+  transition: all 0.2s;
+}
+.approved:active {
+  transform: translateY(2px);
+}
+
+.mark-approved {
+  height: 50px;
   padding: 10px;
-  display: none;
-  flex-direction: column;
-  overflow: auto;
+  color: white;
 }

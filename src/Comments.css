@@ -60,6 +60,6 @@ a {
     align-items: center;
 }
 
-.comment-seen {
+.comment-unseen {
     border-left: 1px solid #d8d9d9;
 }

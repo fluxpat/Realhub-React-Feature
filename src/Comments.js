@@ -7,14 +7,8 @@ function Comments(props) {
 
     const [acknowledged, setAcknowledged] = useState(props.acknowledged)
 
-    // const clickHandler = (id) => {
-    //     (data.find(comment => comment.id === id)).acknowledged = true;
-    //     console.log(data.find(comment => comment.id === id))
-    // }
-
     const clickHandler = () => {
         props.updateCommentData(props.id);
-        props.refreshBell();
         setAcknowledged(true);
     }
 
@@ -32,11 +26,7 @@ function Comments(props) {
                     <h4>
                         {props.dates.created.date_time}
                     </h4>
-                    {/* {acknowledged ? <a></a> : <a href="#" className="comment-seen"
-                        onClick={() => setAcknowledged(true)}>Mark as Seen</a>} */}
-                    {/* {acknowledged ? <a></a> : <a href="#" className="comment-seen"
-                        onClick={() => props.updateCommentData(props.id), ()=>setAcknowledged(true)}>Mark as Seen</a>} */}
-                    {acknowledged ? <a></a> : <a href="#" className="comment-seen"
+                    {acknowledged ? <a className="comment-seen"></a> : <a href="#" className="comment-unseen"
                         onClick={() => clickHandler()}>Mark as Seen</a>}
                 </div>
             </div>
